@@ -38,6 +38,18 @@ namespace MusicOrganizer.Tests
       Assert.AreEqual(1, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsAllCDObjects_CDList()
+    {
+      string name1 = "CD1";
+      string name2 = "CD2";
+      CD newCD1 = new CD(name1);
+      CD newCD2 = new CD(name2);
+      List<CD> newList = new List<CD> { newCD1, newCD2 };
+      List<CD> result = CD.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 
 }
