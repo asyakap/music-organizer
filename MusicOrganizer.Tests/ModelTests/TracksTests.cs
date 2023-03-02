@@ -16,6 +16,18 @@ namespace Tracks.Tests
       Assert.AreEqual(typeof(Track), newTrack.GetType());
     }
 
+    [TestMethod]
+
+    public void GetTrackName_ReturnTrackName_String()
+    {
+      string trackName = "Frozen";
+      Track newTrack = new Track(trackName);
+      string result = newTrack.TrackName;
+      Assert.AreEqual(trackName, result);
+    }
+
+    
+
   }
 
 
