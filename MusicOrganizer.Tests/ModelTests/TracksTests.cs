@@ -65,10 +65,17 @@ namespace Tracks.Tests
       CollectionAssert.AreEqual(newTrackList, result);
     }
 
+    [TestMethod]
 
-
-
-
+    public void Find_ReturnsCorrectTrack_Track()
+    {
+      string songName1 = "Frozen";
+      string songName2 = " Frozen 2";
+      Track newTrack1 = new Track(songName1);
+      Track newTrack2 = new Track(songName2);
+      Track result = Track.Find(2);
+      Assert.AreEqual(newTrack2, result);
+    }
   }
 }
 
