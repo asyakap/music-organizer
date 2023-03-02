@@ -37,5 +37,18 @@ namespace MusicOrganizer.Models
     {
       return _instances[searchId-1];
     }
+
+    public static List<CD> FindByArtist(string artist)
+    {
+      List<CD> list = new List<CD> { };
+      foreach (CD cd in _instances) 
+      {
+        if (cd.Artist == artist) 
+        {
+          list.Add(cd);
+        }
+      }
+      return list;
+    }
   }
 }

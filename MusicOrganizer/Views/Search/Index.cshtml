@@ -1,0 +1,11 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MusicOrganizer.Models;
+<form action="/search/artisttracks" method="post">
+  <label for="artist">Add an artist to search for</label>
+  <input id="artist" name="artist" type="text">
+  <br>
+  <button type="submit">Submit</button>
+</form>

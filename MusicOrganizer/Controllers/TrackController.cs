@@ -14,7 +14,7 @@ namespace MusicOrganizer.Controllers
       return View(cd);
     }
 
-     [HttpPost("/tracks")]
+    [HttpPost("/tracks")]
     public ActionResult Create(string trackName)
     {
       Track myTrack = new Track(trackName);
@@ -44,6 +44,6 @@ namespace MusicOrganizer.Controllers
       model.Add("cd", cd);
       return View(model);
     }
-    
+
   }
 }
