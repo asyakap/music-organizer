@@ -52,6 +52,19 @@ namespace Tracks.Tests
       CollectionAssert.AreEqual(newTrackList, result);
     }
 
+    [TestMethod]
+
+    public void GetAll_ReturnsTracks_TrackList()
+    {
+      string songName1 = "Frozen";
+      string songName2 = "Frozen 2";
+      Track newTrack1 = new Track(songName1);
+      Track newTrack2 = new Track(songName2);
+      List<Track> newTrackList = new List<Track> { newTrack1, newTrack2 };
+      List<Track> result = Track.GetAll();
+      CollectionAssert.AreEqual(newTrackList, result);
+    }
+
 
 
 
