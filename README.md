@@ -32,7 +32,7 @@ _A web application that allows user create catalogues with their music collectio
 
 MIT
 
-* Copyright (c) _2023_ _Asia Kaplanyan_
+* Copyright (c) _2023_ _Asia Kaplanyan, Eliot Gronstal, Jannon Sielaff, Luckie_
 
 MIT License
 
