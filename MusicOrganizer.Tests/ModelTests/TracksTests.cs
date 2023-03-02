@@ -26,7 +26,17 @@ namespace Tracks.Tests
       Assert.AreEqual(trackName, result);
     }
 
-    
+    [TestMethod]
+
+    public void SetTrackName_SetTrackName_String()
+    {
+      string trackName = "Frozen";
+      Track newTrack = new Track(trackName);
+      string updatedTrackName = "Frozen 2";
+      newTrack.TrackName = updatedTrackName;
+      string result = newTrack.TrackName;
+      Assert.AreEqual(updatedTrackName, result);
+    }
 
   }
 
