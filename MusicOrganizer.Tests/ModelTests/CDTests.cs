@@ -16,7 +16,7 @@ namespace MusicOrganizer.Tests
     [TestMethod]
     public void CDConstructor_CreatesInstanceOfCD_CD()
     {
-      CD newCD = new CD("test CD");
+      CD newCD = new CD("test CD", "test Artist");
       Assert.AreEqual(typeof(CD), newCD.GetType());
     }
 
@@ -24,16 +24,28 @@ namespace MusicOrganizer.Tests
     public void GetName_ReturnsCDName_String()
     {
       string name = "Test CD";
-      CD newCD = new CD(name);
+      string artist = "Test artist";
+      CD newCD = new CD(name, artist);
       string result = newCD.Name;
       Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetArtist_ReturnsCDsArtistName_String()
+    {
+      string name = "Test CD";
+      string artist = "Test artist";
+      CD newCD = new CD(name, artist);
+      string result = newCD.Artist;
+      Assert.AreEqual(artist, result);
     }
 
     [TestMethod]
     public void GetId_ReturnsCDId_Int()
     {
       string name = "Test CD";
-      CD newCD = new CD(name);
+      string artist = "Test artist";
+      CD newCD = new CD(name, artist);
       int result = newCD.Id;
       Assert.AreEqual(1, result);
     }
@@ -43,8 +55,10 @@ namespace MusicOrganizer.Tests
     {
       string name1 = "CD1";
       string name2 = "CD2";
-      CD newCD1 = new CD(name1);
-      CD newCD2 = new CD(name2);
+      string artist1 = "Test artist1";
+      string artist2 = "Test artist2";
+      CD newCD1 = new CD(name1, artist1);
+      CD newCD2 = new CD(name2, artist2);
       List<CD> newList = new List<CD> { newCD1, newCD2 };
       List<CD> result = CD.GetAll();
       CollectionAssert.AreEqual(newList, result);
@@ -58,13 +72,14 @@ namespace MusicOrganizer.Tests
       List<Track> newList = new List<Track> { newTrack };
 
       string name = "Songs";
-      CD newCD = new CD(name);
+      string artist = "Test artist";
+      CD newCD = new CD(name, artist);
       newCD.AddTrack(newTrack);
-      
+
       List<Track> result = newCD.Tracks;
       CollectionAssert.AreEqual(newList, result);
     }
-
+    
   }
 
 }
