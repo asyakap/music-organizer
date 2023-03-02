@@ -13,8 +13,9 @@ namespace MusicOrganizer
 
       WebApplication app = builder.Build();
 
-      app.UseHttpsRedirection();
-      app.UseStaticFiles();
+      // new code!
+      app.UseDeveloperExceptionPage();
+
       app.UseRouting();
 
       app.MapControllerRoute(

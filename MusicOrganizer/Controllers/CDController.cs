@@ -37,5 +37,18 @@ namespace MusicOrganizer.Controllers
       model.Add("tracks", tracks);
       return View(model);
     }
+
+    [HttpPost("/cd/{cdId}/tracks")]
+    public ActionResult Create(int cdId, string trackName)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      CD foundCD = CD.Find(cdId);
+      Track newTrack = new Track(trackName);
+      foundCD.AddTrack(newTrack);
+      List<Track> CDTracks = foundCD.Tracks;
+      model.Add("tracks", CDTracks);
+      model.Add("cd", foundCD);
+      return View("Show", model);
+    }
   }
 }
