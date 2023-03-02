@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using MusicOrganizer.Models;
 using System;
 
-namespace Tracks.Tests
+namespace Tracks.Tests 
 {
   [TestClass]
-  public class TrackTests
+  public class TrackTests : IDisposable
   {
+    public void Dispose()
+    {
+      Track.ClearAll();
+    }
+
     [TestMethod]
 
     public void TrackConstructor_CreateInstanceOfTrack_Track()
@@ -38,9 +43,20 @@ namespace Tracks.Tests
       Assert.AreEqual(updatedTrackName, result);
     }
 
+    [TestMethod]
+
+    public void GetAll_ReturnsEmptyList_TrackList()
+    {
+      List<Track> newTrackList = new List<Track> { };
+      List<Track> result = Track.GetAll();
+      CollectionAssert.AreEqual(newTrackList, result);
+    }
+
+
+
+
+
   }
-
-
 }
 
 
