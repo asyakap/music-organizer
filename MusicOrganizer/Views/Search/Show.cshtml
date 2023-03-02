@@ -2,7 +2,19 @@
   Layout = "_Layout";
 }
 
-add the search controller route
 
-"/search/artisttracks"
+<!-- "/search/artisttracks" where we are right now-->
 
+@using MusicOrganizer.Models;
+
+<h3>Here are all the artists' CDs that match your search:</h3>
+
+<ol>
+  @foreach (CD cd in @Model)
+  {
+    <li>@cd.Name: @cd.Name</li>
+  }
+</ol>
+<br>
+<p><a href='/cd'>Return to CD list</a></p>
+<p><a href='/'>Return to Main Page</a></p>
