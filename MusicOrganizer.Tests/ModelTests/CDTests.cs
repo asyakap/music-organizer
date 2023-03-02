@@ -6,8 +6,12 @@ using System;
 namespace MusicOrganizer.Tests
 {
   [TestClass]
-  public class CDTests
+  public class CDTests : IDisposable
   {
+    public void Dispose()
+    {
+      CD.ClearAll();
+    }
 
     [TestMethod]
     public void CDConstructor_CreatesInstanceOfCD_CD()
@@ -17,7 +21,7 @@ namespace MusicOrganizer.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+    public void GetName_ReturnsCDName_String()
     {
       string name = "Test CD";
       CD newCD = new CD(name);
@@ -25,6 +29,14 @@ namespace MusicOrganizer.Tests
       Assert.AreEqual(name, result);
     }
 
+    [TestMethod]
+    public void GetId_ReturnsCDId_Int()
+    {
+      string name = "Test CD";
+      CD newCD = new CD(name);
+      int result = newCD.Id;
+      Assert.AreEqual(1, result);
+    }
 
   }
 
