@@ -16,6 +16,15 @@ namespace MusicOrganizer.Tests
       Assert.AreEqual(typeof(CD), newCD.GetType());
     }
 
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      string name = "Test CD";
+      CD newCD = new CD(name);
+      string result = newCD.Name;
+      Assert.AreEqual(name, result);
+    }
+
 
   }
 
