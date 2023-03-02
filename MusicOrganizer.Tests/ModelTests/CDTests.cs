@@ -50,6 +50,21 @@ namespace MusicOrganizer.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void AddTrack_AssociatesTrackWithCD_TrackList()
+    {
+      string trackName = "Frozen";
+      Track newTrack = new Track(trackName);
+      List<Track> newList = new List<Track> { newTrack };
+
+      string name = "Songs";
+      CD newCD = new CD(name);
+      newCD.AddTrack(newTrack);
+      
+      List<Track> result = newCD.Tracks;
+      CollectionAssert.AreEqual(newList, result);
+    }
+
   }
 
 }
