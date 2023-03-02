@@ -41,7 +41,7 @@ namespace MusicOrganizer.Controllers
       CD cd = CD.Find(cdId);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("track", track);
-      model.Add("CD", cd);
+      model.Add("cd", cd);
       return View(model);
     }
     
