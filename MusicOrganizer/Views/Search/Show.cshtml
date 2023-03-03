@@ -12,7 +12,7 @@
 <ol>
   @foreach (CD cd in @Model)
   {
-    <p>@cd.Name:</p>;
+    <h3>@cd.Name:</h3>;
     @foreach (Track track in @cd.Tracks)
     {
       <li>@track.TrackName</li>

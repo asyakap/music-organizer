@@ -80,6 +80,17 @@ namespace MusicOrganizer.Tests
       CollectionAssert.AreEqual(newList, result);
     }
     
+    [TestMethod]
+    public void FindByArtist_ReturnsAllCDsOfTheArtist_List()
+    {
+      string name = "Disk1";
+      string artist = "Singer1";
+      CD newCD = new CD(name, artist);
+      List<CD> newCD1 = new List<CD> { newCD };
+      List<CD> result = CD.FindByArtist(artist);
+      CollectionAssert.AreEqual(newCD1, result);
+    }
+
   }
 
 }
